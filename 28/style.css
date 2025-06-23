@@ -512,11 +512,6 @@ img {
     text-shadow: 0 0 5px rgb(255, 255, 255);
 }
 
-.hobbyone img {
-    width: 250px;
-    height: 400px;
-}
-
 .hobbytwo{
     display: flex;
     flex-direction: column;
