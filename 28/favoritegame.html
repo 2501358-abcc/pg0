@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>favoritegame</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var gameElements = document.querySelectorAll('.games');
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            entry.target.style.animationDelay = 
+            (Array.from(foodElements).indexOf(entry.target) * 0.5) + 's';
+                            }
+                        });
+                    }, { threshold: 0.1 });
+
+                gameElements.forEach(function(element) {
+                        observer.observe(element);
+                    });
+                });
+        </script>
+    </head>
+    <body>
+
+        <nav>
+            <h3>MENU</h3>
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="favoritemusic.html">MUSIC</a></li>
+                <li><a href="favoritefood.html">FOOD</a></li>
+                <li><a href="favoritegame.html">GAME</a></li>
+                <li><a href="bassclarinet.html">bassclarinet</a></li>
+                <li><a href="hobby.html">HOBBY</a></li>
+            </ul>
+        </nav>
+        <div class="maindiv">
+            <h3 class="mokuji">My Favorite Game</h3>
+
+            <hr>
+
+            <div class="games right">
+                <img src="https://www.fantasylife.jp/fli/assets/img/product/img_dwl.jpg" alt="ファンタジーライフｉの画像">
+                <div class="gamediv">
+                    <a href="https://www.fantasylife.jp/fli/"><h3>ファンタジーライフｉ グルグルの竜と時をぬすむ少女</h3></a>
+                    <p>14のライフ（職業）を使いこなして、時に広大なマップを剣やピッケルをもって駆け回り、時にのこぎりやフライパンを片手に制作に励み、時に入手した家具や置物を拠点を飾り付け！
+                        <br>そのほかにもプレイヤーの着せ替え要素や仲間キャラの育成も楽しめるやりこみ要素たくさんのゲームです！</p>
+                    <div class="playnow">
+                        プレイ中
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="games">
+                <div class="gamediv left">
+                    <a href="https://jp.runefactory.com/ryu-no-kuni/"><h3>龍の国　ルーンファクトリー</h3></a>
+                    <p>ルーンファクトリーシリーズ最新作の今作は前作までと大きく世界観が変わり和風テイストに。高所から落下して記憶喪失になってしまった主人公は舞台である「東の国」を救うため、龍の背に乗り大地と空を駆け回る！
+                        <br>キャラクターが作りこまれているので交流パートも面白いゲームとなっています！</p>
+                    <div class="playnow left">
+                        プレイ中
+                    </div>
+                </div>
+                <img src="https://www.marv.jp/uploads/title/10805/66cd90b86e33d.jpg" alt="ルーンファクトリー龍の国の画像">
+            </div>
+
+
+
+            <div class="games right">
+                <img  src="https://storage.googleapis.com/content-creatorscamp-production/game/logo/23691128_0_middle?1699841200904" alt="都市伝説解体センターの画像">
+                <div class="gamediv">
+                    <a href="https://umdc.shueisha-games.com/"><h3>都市伝説解体センター</h3></a>
+                    <p>幽霊？が見えてしまう体質の主人公福来あざみは、助けを求めて転がり込んだ「都市伝説解体センター」でどういうわけか職員として働くことになってしまった！
+                        <br>そんなこんなで主人公は職員として怪事件・都市伝説に関わっていくことになる。プレイするなら絶対にネタバレは見ないほうがいい！超おすすめ！
+                    </p>
+                    <div class="playnow">
+                        クリア済み
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <h2>ABCC NS3<h2>
+            </div>
+        </div>
+    </body>
+</html>
