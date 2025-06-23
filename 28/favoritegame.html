@@ -3,6 +3,24 @@
     <head>
         <title>favoritegame</title>
         <link href="style.css" rel="stylesheet" type="text/css">
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var gameElements = document.querySelectorAll('.games');
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            entry.target.style.animationDelay = 
+            (Array.from(foodElements).indexOf(entry.target) * 0.5) + 's';
+                            }
+                        });
+                    }, { threshold: 0.1 });
+
+                gameElements.forEach(function(element) {
+                        observer.observe(element);
+                    });
+                });
+        </script>
     </head>
     <body>
 
@@ -62,6 +80,9 @@
                 </div>
             </div>
 
+            <div class="footer">
+                <h2>ABCC NS3<h2>
+            </div>
         </div>
     </body>
 </html>
