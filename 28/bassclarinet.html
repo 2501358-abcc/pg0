@@ -3,6 +3,24 @@
     <head>
         <title>bassclarinet</title>
         <link href="style.css" rel="stylesheet" type="text/css">
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var bassElements = document.querySelectorAll('.first,.basscldiv,.last');
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            entry.target.style.animationDelay = 
+            (Array.from(foodElements).indexOf(entry.target) * 0.5) + 's';
+                            }
+                        });
+                    }, { threshold: 0.1 });
+
+                bassElements.forEach(function(element) {
+                        observer.observe(element);
+                    });
+                });
+        </script>
     </head>
     <body>
 
@@ -17,6 +35,7 @@
                 <li><a href="hobby.html">HOBBY</a></li>
             </ul>
         </nav>
+
         <div class="maindiv">
             <h3 class="mokuji">bassclarinet</h3>
 
@@ -58,15 +77,18 @@
                 </div>
                 
 
-                <div class="last"></div>
+                <div class="last">
                     <hr>
                     <p>軽く説明をしてもいまいちどんな楽器かわからないと思うので、イチオシの演奏動画を紹介します。</p>
                     <p>バスクラリネットソロで高音から低音まで多彩な音色が聞けるので興味が出た方は聞いてみてください。</p>
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/y9wpjzV58yw?si=8rI_auns_HAXGbNZ" 
-                        title="YouTube video player" frameborder="0" 
+                        title="YouTube video player" style="border: none;"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
+            </div>
+            <div class="footer">
+                <h2>ABCC NS3<h2>
             </div>
         </div>
     </body>
