@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html>
-    <head lang="ja">
+<html lang="ja">
+    <head>
         <title>28 home</title>
         <link href="style.css" rel="stylesheet" type="text/css">
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var flexElements = document.querySelectorAll('.flex');
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            entry.target.style.animationDelay = 
+            (Array.from(flexElements).indexOf(entry.target) * 0.5) + 's';
+                            }
+                        });
+                    }, { threshold: 0.1 });
+
+                flexElements.forEach(function(element) {
+                        observer.observe(element);
+                    });
+                });
+        </script>
     </head>
-    <body>
+    <body> 
         <nav>
             <h3>MENU</h3>
             <ul>
@@ -52,7 +70,6 @@
 
             <hr>
 
-            <div class="home">
             <h3>other</h3>
             <div class="flex">
                 <div class="introducition2">
@@ -66,6 +83,10 @@
                     <p>私の趣味の紹介です</p>
                     <a href="hobby.html">>>more</a>
                 </div>
+            </div>
+
+            <div class="footer">
+                <h2>ABCC NS3<h2>
             </div>
         </div>
     </body>
