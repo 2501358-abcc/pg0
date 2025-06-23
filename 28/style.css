@@ -512,6 +512,11 @@ img {
     text-shadow: 0 0 5px rgb(255, 255, 255);
 }
 
+.rulebook {
+    width: 300px;
+    height: 400px;
+}
+
 .hobbytwo{
     display: flex;
     flex-direction: column;
